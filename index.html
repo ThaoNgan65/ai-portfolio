@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thảo Ngân · Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;800&family=Be+Vietnam+Pro:wght@400;500;600&display=swap">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#ECEFEA;--ink:#10201F;--mute:#51605E;--line:#C9D2CD;--card:#F8FAF7;--teal:#0C3F40;--coral:#F2542D;--brass:#B8892B;--on:#F3F7F4;
+--head:"Epilogue","Be Vietnam Pro",system-ui,sans-serif;--sans:"Be Vietnam Pro",system-ui,sans-serif;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1514;--ink:#E7EFEC;--mute:#93A7A3;--line:#22403D;--card:#12201F;--coral:#FF7A55;--brass:#D6AE55;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0B1514;--ink:#E7EFEC;--mute:#93A7A3;--line:#22403D;--card:#12201F;--coral:#FF7A55;--brass:#D6AE55;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 var(--sans);padding:0 max(20px,env(safe-area-inset-right,0px)) 40px max(20px,env(safe-area-inset-left,0px))}
+.wrap{max-width:1140px;margin:0 auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+h1,h2,h3{font-family:var(--head);margin:0;font-weight:800;line-height:1.02;letter-spacing:-.035em}
+p{margin:0}
+header{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;align-items:center;padding:18px 0;font-size:14px}
+header nav{display:flex;gap:6px 24px;flex-wrap:wrap}
+header nav a{text-decoration:none;color:var(--mute);font-weight:500}
+header nav a:hover{color:var(--coral)}
+.logo{font:800 1.15rem var(--head);text-decoration:none;letter-spacing:-.03em}
+.lang button{font:600 13px var(--sans);border:0;background:none;color:var(--mute);padding:4px 8px;cursor:pointer}
+.lang button[aria-pressed="true"]{color:var(--ink);box-shadow:inset 0 -2px var(--coral)}
+
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:32px;align-items:center;padding:clamp(24px,5vw,56px) 0 clamp(40px,6vw,72px)}
+h1{font-size:clamp(4rem,12vw,9.5rem);line-height:.84;letter-spacing:-.05em;position:relative;z-index:2}
+h1 span{display:block}
+h1 span+span{margin-left:.45em}
+.lead{margin-top:28px;max-width:40ch;font-size:1.15rem;color:var(--mute)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:12px 22px;border:2px solid var(--ink);border-radius:3px;font-weight:600;font-size:14px;text-decoration:none;transition:transform .15s,background .15s}
+.btn:hover{background:var(--ink);color:var(--bg)}
+.btn.fill{background:var(--coral);border-color:var(--coral);color:#fff}
+.btn.fill:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.vf{background:var(--teal);border-radius:4px;box-shadow:14px 14px 0 var(--coral);position:relative;overflow:hidden;color:var(--on)}
+.vf svg{display:block;width:100%;height:auto}
+.scan{animation:scan 5s linear infinite}
+@keyframes scan{0%{transform:translateY(-20px)}100%{transform:translateY(500px)}}
+.vf figcaption{padding:10px 16px;font-size:13px;color:#A9C4BF;border-top:1px solid rgba(255,255,255,.12)}
+.vf{margin:0 14px 14px 0}
+
+.band{background:var(--teal);color:var(--on);margin:0 calc(50% - 50vw);padding:0 max(20px,calc(50vw - 570px))}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin:0;padding:0}
+.stats div{display:flex;flex-direction:column;padding:34px 20px 34px 0}
+.stats dd{margin:0;font:800 clamp(3rem,7vw,5.4rem)/1 var(--head);letter-spacing:-.05em;color:var(--coral)}
+.stats dt{order:2;margin-top:8px;font-size:14px;color:#A9C4BF;max-width:20ch;line-height:1.45}
+
+.sec{padding:clamp(52px,8vw,100px) 0 0}
+h2{font-size:clamp(2.2rem,5.5vw,4rem);max-width:15ch;margin-bottom:34px}
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:40px}
+.about h2{margin:0}
+.about p{max-width:52ch}
+.about p+p{margin-top:1em}
+
+.aw{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.feat{background:var(--teal);color:var(--on);border-bottom:6px solid var(--brass);border-radius:4px;padding:clamp(24px,3.5vw,40px);position:relative;overflow:hidden;min-height:260px;display:flex;flex-direction:column;justify-content:flex-end}
+.feat b{position:absolute;right:14px;top:-18px;font:800 clamp(9rem,18vw,14rem)/1 var(--head);color:var(--brass);opacity:.28;letter-spacing:-.06em}
+.feat small{color:var(--brass);font-weight:600;font-size:14px;filter:brightness(1.25)}
+.feat h3{font-size:clamp(1.7rem,3.2vw,2.5rem);margin:8px 0 12px;position:relative}
+.feat p{font-size:14px;color:#A9C4BF;position:relative;max-width:36ch}
+.row{display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--line)}
+.row b{font:800 1.15rem var(--head);letter-spacing:-.02em}
+.row span{color:var(--mute);font-size:14px}
+.aw+.row{margin-top:10px}
+
+.proj{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:0;margin-bottom:28px;background:var(--card);border-radius:4px;overflow:hidden;border:1px solid var(--line)}
+.proj:nth-of-type(even) .viz{order:2}
+.viz{background:var(--teal);color:var(--on);padding:clamp(18px,3vw,34px);display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.viz svg{width:100%;height:auto;display:block}
+.viz .tags{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.viz .tags li{font-size:13px;border:1px solid rgba(255,255,255,.3);border-radius:2px;padding:1px 10px}
+.t{stroke:var(--on);fill:none;stroke-width:1.6}
+.tf{fill:var(--on);font:500 11px var(--sans)}
+.tc{fill:var(--coral);font:600 11px var(--sans)}
+.c{stroke:var(--coral);fill:none;stroke-width:2.4;stroke-linejoin:round}
+.cw{fill:rgba(242,84,45,.2)}
+.d{stroke-dasharray:5 4}
+.info{padding:clamp(22px,3.5vw,40px)}
+.info small{color:var(--coral);font-weight:600;font-size:14px;display:block;margin-bottom:8px;line-height:1.4}
+.info h3{font-size:clamp(1.6rem,2.8vw,2.1rem);margin-bottom:14px}
+.info>p{max-width:52ch}
+.info ul{margin:16px 0 18px;padding:0;list-style:none;display:grid;gap:9px;max-width:56ch}
+.info li{padding-left:20px;position:relative;color:var(--mute);font-size:15px;line-height:1.6}
+.info li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;background:var(--coral);transform:rotate(45deg)}
+.note{font-size:14px;color:var(--mute);border-left:3px solid var(--brass);padding-left:12px;margin-bottom:18px}
+.more{font-weight:600;font-size:14px;text-decoration-color:var(--coral);text-underline-offset:5px;text-decoration-thickness:2px}
+
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.skills div{border-top:4px solid var(--ink);padding-top:14px}
+.skills div:nth-child(2){border-color:var(--coral)}
+.skills div:nth-child(3){border-color:var(--brass)}
+.skills div:nth-child(4){border-color:var(--teal)}
+.skills h3{font-size:1.15rem;margin-bottom:10px;letter-spacing:-.02em}
+.skills ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.skills li{background:var(--card);border:1px solid var(--line);border-radius:2px;padding:1px 10px;font-size:14px}
+
+footer{margin-top:clamp(52px,8vw,100px);background:var(--teal);color:var(--on);border-radius:4px;padding:clamp(30px,6vw,72px);display:flex;flex-wrap:wrap;gap:28px 48px;justify-content:space-between;align-items:end;box-shadow:14px 14px 0 var(--coral);margin-right:14px}
+footer h2{margin:0;max-width:13ch;color:var(--on)}
+footer .btn{border-color:var(--on);color:var(--on)}
+footer .btn:hover{background:var(--on);color:var(--teal)}
+footer .btn.fill{background:var(--coral);border-color:var(--coral);color:#fff}
+.small{margin-top:40px;font-size:13px;color:var(--mute)}
+
+.dt{transition:opacity .25s}
+.vf.f .dt{opacity:.18}
+.vf.f .dt.on{opacity:1}
+.vf svg{cursor:pointer;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.ctl{display:flex;flex-wrap:wrap;gap:6px;padding:12px 16px 0;border-top:1px solid rgba(255,255,255,.12)}
+.ctl button{font:500 13px var(--sans);color:var(--on);background:none;border:1px solid rgba(255,255,255,.3);border-radius:2px;padding:3px 12px;cursor:pointer}
+.ctl button:hover{border-color:var(--coral)}
+.ctl button[aria-pressed="true"]{background:var(--coral);border-color:var(--coral);color:#0C3F40;font-weight:600}
+#st{margin:0;padding:8px 16px 14px;font-size:13px;line-height:1.55;color:#A9C4BF;min-height:4.6em}
+@media (prefers-reduced-motion:no-preference){#dots,.ey,.pu,#mo{transition:transform .25s ease-out,opacity .15s}}
+@media (max-width:860px){
+.hero,.about,.proj,.aw{grid-template-columns:minmax(0,1fr)}
+.proj:nth-of-type(even) .viz{order:0}
+.stats,.skills{grid-template-columns:repeat(2,1fr)}
+}
+@media (prefers-reduced-motion:reduce){.scan{animation:none}*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="logo" href="#top">Thảo Ngân</a>
+  <nav aria-label="Menu">
+    <a href="#gioi-thieu" data-en="About">Giới thiệu</a>
+    <a href="#thanh-tich" data-en="Awards">Thành tích</a>
+    <a href="#du-an" data-en="Projects">Dự án</a>
+    <a href="#ky-nang" data-en="Skills">Kỹ năng</a>
+    <a href="#lien-he" data-en="Contact">Liên hệ</a>
+  </nav>
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-l="vi" aria-pressed="true">VI</button><button type="button" data-l="en" aria-pressed="false">EN</button></div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div>
+    <h1><span>Thảo</span><span>Ngân</span></h1>
+    <p class="lead" data-en="Third-year AI student at FPT University, Can Tho. I build computer vision and applied ML systems that run reliably, from model to interface.">Sinh viên năm ba ngành Trí tuệ nhân tạo, ĐH FPT Cần Thơ. Mình xây dựng các hệ thống thị giác máy tính và học máy ứng dụng chạy ổn định, từ mô hình đến giao diện.</p>
+    <div class="cta">
+      <a class="btn fill" href="#du-an" data-en="View projects">Xem dự án</a>
+      <a class="btn" href="https://github.com/ThaoNgan65" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn" href="https://www.linkedin.com/in/ngan-nguyen-04bb3a410/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+  <figure class="vf">
+    <svg id="vf" viewBox="0 0 400 460" role="img" aria-label="Minh hoạ các tín hiệu mà bốn dự án theo dõi">
+      <g id="grid" stroke="rgba(255,255,255,.07)"></g>
+      <g id="dots" class="dt" data-k="face" fill="#F3F7F4"></g>
+      <ellipse id="mo" cx="196" cy="290" rx="26" ry="7" fill="none" stroke="#F2542D" stroke-width="2"/><g class="dt" data-k="eyes"><g fill="none" stroke="#F2542D" stroke-width="2"><ellipse class="ey" cx="160" cy="190" rx="22" ry="8"/><ellipse class="ey" cx="232" cy="190" rx="22" ry="8"/><circle class="pu" cx="160" cy="190" r="3.5" fill="#F2542D"/><circle class="pu" cx="232" cy="190" r="3.5" fill="#F2542D"/></g>
+      <g class="dt" data-k="face"><g fill="none" stroke="#F3F7F4" stroke-width="2.5"><path d="M92 74V104M92 74H122M300 74H270M300 74V104M92 340V310M92 340H122M300 340H270M300 340V310"/></g>
+      <rect x="92" y="56" width="104" height="18" fill="#F3F7F4"/><text x="100" y="69" font-size="11" font-weight="600" fill="#0C3F40">face · 468</text></g>
+      <rect id="eb" x="132" y="168" width="130" height="44" fill="none" stroke="#F2542D" stroke-width="1.5"/><rect id="ec" x="132" y="150" width="86" height="18" fill="#F2542D"/><text id="et" x="139" y="163" font-size="11" font-weight="600" fill="#fff">eyes · 1.8 s</text></g>
+      <g class="dt" data-k="phone"><rect x="296" y="236" width="70" height="116" fill="none" stroke="#F2542D" stroke-width="1.5"/><rect x="296" y="218" width="84" height="18" fill="#F2542D"/><text x="303" y="231" font-size="11" font-weight="600" fill="#fff">phone 0.94</text>
+      <rect x="312" y="256" width="38" height="72" rx="7" fill="none" stroke="#F3F7F4" stroke-width="2"/></g>
+      <g class="dt" data-k="skin"><path d="M40 400q18-26 44-12t22 34-34 20-34-16 2-26z" fill="rgba(242,84,45,.35)" stroke="#F2542D" stroke-width="1.5"/><rect x="28" y="364" width="74" height="18" fill="#F2542D"/><text x="35" y="377" font-size="11" font-weight="600" fill="#fff">mel 0.31</text></g>
+      <rect id="flash" x="3" y="3" width="394" height="454" fill="none" stroke="#F2542D" stroke-width="0"/><rect class="scan" x="0" y="0" width="400" height="3" fill="#F2542D" opacity=".9"/>
+    </svg>
+    <div class="ctl" role="group" aria-label="Signals"><button type="button" data-k="face" aria-pressed="false" data-en="Face">Khuôn mặt</button><button type="button" data-k="eyes" aria-pressed="false" data-en="Closed eyes">Mắt nhắm</button><button type="button" data-k="phone" aria-pressed="false" data-en="Phone">Điện thoại</button><button type="button" data-k="skin" aria-pressed="false" data-en="Skin lesion">Tổn thương da</button></div><p id="st" aria-live="polite"></p>
+  </figure>
+</div>
+</main>
+</div>
+
+<div class="band"><div class="wrap">
+<dl class="stats">
+  <div><dt data-en="featured projects">dự án nổi bật</dt><dd>4</dd></div>
+  <div><dt data-en="face landmarks tracked live">điểm mốc khuôn mặt theo dõi realtime</dt><dd>468</dd></div>
+  <div><dt data-en="skin lesion classes">nhóm tổn thương da phân loại</dt><dd>7</dd></div>
+  <div><dt data-en="question languages in Excel QA">ngôn ngữ câu hỏi trong Excel QA</dt><dd>6</dd></div>
+</dl>
+</div></div>
+
+<div class="wrap">
+<section class="sec about" id="gioi-thieu">
+  <h2 data-en="I learn by building things that run.">Học bằng cách làm ra thứ chạy được.</h2>
+  <div>
+    <p data-en="I’m a third-year AI student with a strong academic record, and I’ve built most of my projects myself, through coursework, research-style work and competitions.">Mình là sinh viên năm ba ngành AI với thành tích học tập tốt, tự tay xây dựng nhiều dự án qua môn học, đề tài nghiên cứu và các cuộc thi.</p>
+    <p data-en="My interests are machine learning, deep learning, computer vision and apps that put models in users’ hands. I’m looking for real problems to apply them to, and a team to grow with.">Mình quan tâm đến Machine Learning, Deep Learning, Computer Vision và những ứng dụng đưa mô hình đến tay người dùng. Mình đang tìm bài toán thật để áp dụng và một đội nhóm để cùng trưởng thành.</p>
+  </div>
+</section>
+
+<section class="sec" id="thanh-tich">
+  <h2 data-en="Awards and academics">Giải thưởng và học tập</h2>
+  <div class="aw">
+    <div class="feat"><b>1</b><small>2026</small><h3 data-en="First Prize, Southern Regional Round">Giải Nhất, vòng khu vực phía Nam</h3><p data-en="National Youth Innovation Competition in Artificial Intelligence">Cuộc thi Sáng tạo trẻ Quốc gia, lĩnh vực Trí tuệ nhân tạo</p></div>
+    <div class="feat"><b>★</b><small data-en="Summer 2026">Hè 2026</small><h3 data-en="Golden Toad Award">Giải Cóc Vàng</h3><p data-en="Engineering and Technology Division, FPT University">Khối Kỹ thuật và Công nghệ, Đại học FPT</p></div>
+  </div>
+  <div class="row"><b data-en="Excellent Student">Sinh viên xuất sắc</b><span data-en="Spring 2026 · FPT University">Xuân 2026 · Đại học FPT</span></div>
+  <div class="row"><b data-en="Excellent Student">Sinh viên xuất sắc</b><span data-en="Fall 2025 · FPT University">Thu 2025 · Đại học FPT</span></div>
+</section>
+
+<section class="sec" id="du-an">
+  <h2 data-en="Four projects, four real problems">Bốn dự án, bốn bài toán thật</h2>
+
+  <article class="proj">
+    <div class="viz">
+      <svg viewBox="0 0 360 170" role="img" aria-label="EAR giảm dưới ngưỡng khoảng 1,8 giây thì cảnh báo">
+        <path class="t" d="M20 14V140H350"/><rect class="cw" x="130" y="96" width="110" height="44"/>
+        <path class="c d" style="stroke:var(--on);opacity:.6" d="M20 96H350"/>
+        <polyline class="c" points="20,50 60,46 90,52 115,48 130,76 140,126 155,132 225,134 238,126 255,66 285,48 320,52 350,46"/>
+        <text class="tf" x="26" y="12">EAR</text><text class="tf" x="184" y="158" text-anchor="middle">≈ 1.8 s</text>
+        <rect x="262" y="16" width="52" height="18" fill="#F2542D"/><text x="288" y="29" font-size="11" font-weight="600" fill="#fff" text-anchor="middle">ALERT</text>
+      </svg>
+      <ul class="tags"><li>Python</li><li>OpenCV</li><li>MediaPipe</li><li>Tkinter</li></ul>
+    </div>
+    <div class="info">
+      <small data-en="Team HAT · National Youth Innovation 2026">Nhóm HAT · Sáng tạo trẻ Quốc gia 2026</small>
+      <h3 data-en="Driver drowsiness detection">Phát hiện tài xế buồn ngủ</h3>
+      <p data-en="A desktop app that watches the driver’s face through a webcam in real time and warns with sound and on-screen alerts.">Ứng dụng desktop theo dõi khuôn mặt tài xế qua webcam theo thời gian thực, cảnh báo bằng âm thanh và giao diện khi có dấu hiệu buồn ngủ.</p>
+      <ul>
+        <li data-en="Four independent channels: closed eyes, yawning, nodding and deep head drop.">Bốn kênh độc lập: mắt nhắm, ngáp, gật gù và cúi đầu sâu.</li>
+        <li data-en="Adapts to sunglasses, low light, glare and a covered camera without false alarms.">Thích ứng với kính râm, thiếu sáng, chói sáng và camera bị che mà không báo sai.</li>
+        <li data-en="Runs on CPU, with a watchdog, logs and test results in the repo.">Chạy trên CPU, có watchdog, log và kết quả kiểm thử trong repo.</li>
+      </ul>
+      <p class="note" data-en="Relies only on visible facial signs; it doesn’t claim to know the driver’s inner state.">Chỉ dựa trên dấu hiệu nhìn thấy trên khuôn mặt, không khẳng định trạng thái bên trong của tài xế.</p>
+      <a class="more" href="https://github.com/ThaoNgan65/AI-2026---Driver-Drowsiness-Detection" target="_blank" rel="noopener" data-en="Source code ↗">Mã nguồn ↗</a>
+    </div>
+  </article>
+
+  <article class="proj">
+    <div class="viz">
+      <svg viewBox="0 0 360 170" role="img" aria-label="Ba phiếu code đưa về trọng tài rồi ra đáp án">
+        <rect class="t" x="6" y="62" width="50" height="40"/><text class="tf" x="31" y="86" text-anchor="middle">.xlsx</text>
+        <path class="t" d="M56 82H86"/>
+        <g class="t"><rect x="90" y="12" width="76" height="30"/><rect x="90" y="68" width="76" height="30"/><rect x="90" y="124" width="76" height="30"/></g>
+        <text class="tf" x="128" y="31" text-anchor="middle">code #1</text><text class="tf" x="128" y="87" text-anchor="middle">code #2</text><text class="tf" x="128" y="143" text-anchor="middle">code #3</text>
+        <path class="t" d="M166 27L208 70M166 83H208M166 139L208 96"/>
+        <rect x="210" y="60" width="64" height="44" fill="#F2542D"/><text x="242" y="86" font-size="12" font-weight="600" fill="#fff" text-anchor="middle">judge</text>
+        <path class="t" d="M274 82H296"/><rect class="t" x="298" y="62" width="56" height="40"/><text class="tf" x="326" y="86" text-anchor="middle">answer</text>
+      </svg>
+      <ul class="tags"><li>Python</li><li>openpyxl</li><li>LLM</li><li>OpenRouter</li><li>Docker</li></ul>
+    </div>
+    <div class="info">
+      <small data-en="LLM · Question answering over spreadsheets">LLM · Hỏi đáp trên bảng tính</small>
+      <h3 data-en="Excel QA, multilingual spreadsheet Q&amp;A">Excel QA, hỏi đáp bảng tính đa ngôn ngữ</h3>
+      <p data-en="Answers natural-language questions over complex .xlsx files in six languages, one short answer per question.">Trả lời câu hỏi tự nhiên trên các tệp .xlsx phức tạp bằng sáu ngôn ngữ, mỗi câu một đáp án ngắn.</p>
+      <ul>
+        <li data-en="The LLM only writes a short script; sums, counts and rounding run in a restricted Python sandbox.">LLM chỉ viết đoạn code ngắn, còn các phép cộng, đếm, làm tròn do Python chạy trong sandbox giới hạn.</li>
+        <li data-en="Three code votes plus a judge when they disagree.">Ba phiếu code cùng một trọng tài khi các phiếu lệch nhau.</li>
+        <li data-en="Reads merged cells, multi-level headers, stacked tables and formulas without cached values.">Đọc được ô gộp, tiêu đề nhiều tầng, nhiều bảng xếp chồng và công thức chưa có giá trị.</li>
+        <li data-en="Built to the limits: 1 GB RAM, 0.08 USD cost guard per question, 20 questions in 40 minutes.">Thiết kế theo ràng buộc: RAM 1 GB, chặn chi phí 0,08 USD mỗi câu, 20 câu trong 40 phút.</li>
+      </ul>
+      <a class="more" href="https://github.com/ThaoNgan65/Excel-QA-Multilingual-Question-Answering-over-Spreadsheets" target="_blank" rel="noopener" data-en="Source code ↗">Mã nguồn ↗</a>
+    </div>
+  </article>
+
+  <article class="proj">
+    <div class="viz">
+      <svg viewBox="0 0 360 170" role="img" aria-label="Ngưỡng riêng: mel 0,30 và bcc 0,20">
+        <rect class="t" x="60" y="30" width="290" height="18"/><rect class="cw" x="146" y="30" width="204" height="18"/><path class="c d" d="M146 18V60"/>
+        <text class="tf" x="50" y="43" text-anchor="end">mel</text><text class="tc" x="146" y="12" text-anchor="middle">0.30</text>
+        <rect class="t" x="60" y="100" width="290" height="18"/><rect class="cw" x="118" y="100" width="232" height="18"/><path class="c d" d="M118 88V130"/>
+        <text class="tf" x="50" y="113" text-anchor="end">bcc</text><text class="tc" x="118" y="82" text-anchor="middle">0.20</text>
+        <text class="tf" x="60" y="156">0</text><text class="tf" x="350" y="156" text-anchor="end">p = 1</text>
+      </svg>
+      <ul class="tags"><li>PyTorch</li><li>EfficientNetV2-S</li><li>Flask</li><li>HAM10000</li></ul>
+    </div>
+    <div class="info">
+      <small data-en="Multimodal deep learning · Screening aid">Học sâu đa phương thức · Hỗ trợ sàng lọc</small>
+      <h3 data-en="Skin lesion classification with a chatbot">Phân loại tổn thương da kèm chatbot</h3>
+      <p data-en="Users upload a skin photo; the model predicts one of 7 HAM10000 classes, then a chatbot gives a summary and first-step advice.">Người dùng gửi ảnh vùng da, mô hình dự đoán một trong 7 nhóm của HAM10000, rồi chatbot tóm tắt và đưa lời khuyên ban đầu.</p>
+      <ul>
+        <li data-en="Combines image features with age, sex and body location.">Kết hợp đặc trưng ảnh với tuổi, giới tính và vị trí trên cơ thể.</li>
+        <li data-en="Own thresholds for melanoma and basal cell carcinoma to reduce missed high-risk cases.">Ngưỡng riêng cho melanoma và basal cell carcinoma để giảm bỏ sót ca nguy cơ cao.</li>
+        <li data-en="Validation accuracy about 86.0%, balanced accuracy about 88.2%, with Grad-CAM and a confusion matrix.">Val accuracy khoảng 86,0%, balanced accuracy khoảng 88,2%, kèm Grad-CAM và confusion matrix.</li>
+      </ul>
+      <p class="note" data-en="A screening aid, not a diagnosis. Users are always reminded to see a dermatologist.">Đây là công cụ hỗ trợ sàng lọc, không phải chẩn đoán. Người dùng luôn được nhắc đi khám bác sĩ da liễu.</p>
+      <a class="more" href="https://github.com/ThaoNgan65/AI-Based-Skin-Lesion-Classification-with-an-Integrated-Chatbot" target="_blank" rel="noopener" data-en="Source code ↗">Mã nguồn ↗</a>
+    </div>
+  </article>
+
+  <article class="proj">
+    <div class="viz">
+      <svg viewBox="0 0 360 170" role="img" aria-label="Phát hiện điện thoại, gửi cảnh báo Telegram">
+        <rect class="t" x="8" y="10" width="150" height="150"/>
+        <rect class="t" x="64" y="50" width="36" height="66" rx="7"/><rect x="48" y="38" width="68" height="90" fill="none" stroke="#F2542D" stroke-width="2"/>
+        <rect x="48" y="20" width="76" height="18" fill="#F2542D"/><text x="86" y="33" font-size="11" font-weight="600" fill="#fff" text-anchor="middle">cell phone</text>
+        <path class="t" d="M158 85H196"/>
+        <rect x="198" y="26" width="118" height="34" fill="none" stroke="#F2542D" stroke-width="2"/><text class="tc" x="257" y="48" text-anchor="middle">HIGH ALERT</text>
+        <path class="t" d="M257 60V96"/>
+        <rect class="t" x="198" y="98" width="118" height="34"/><text class="tf" x="257" y="120" text-anchor="middle">Telegram</text>
+        <text class="tf" x="326" y="120">30 s</text>
+      </svg>
+      <ul class="tags"><li>YOLOv8</li><li>OpenCV</li><li>Flask</li><li>Telegram</li></ul>
+    </div>
+    <div class="info">
+      <small data-en="Real-time computer vision · Web app">Thị giác máy tính thời gian thực · Web app</small>
+      <h3 data-en="Exam monitoring, phone detection">Giám sát phòng thi, phát hiện điện thoại</h3>
+      <p data-en="A web app that detects phones during an exam from images, video or a live camera.">Ứng dụng web phát hiện điện thoại trong giờ kiểm tra, từ ảnh, video hoặc camera trực tiếp.</p>
+      <ul>
+        <li data-en="HIGH ALERT frames are saved and sent to Telegram, with a 30-second cooldown to avoid spam.">Khung hình HIGH ALERT được lưu và gửi Telegram, có thời gian chờ 30 giây để tránh spam.</li>
+        <li data-en="Choose pretrained YOLOv8n or a custom YOLOv8m; a missing model shows a warning instead of crashing.">Chọn YOLOv8n pretrained hoặc YOLOv8m tự huấn luyện; thiếu model thì hiện cảnh báo thay vì crash.</li>
+        <li data-en="Security-minded: upload checks, safe_join, admin token, security headers and a dedicated test file.">Chú ý bảo mật: kiểm tra upload, safe_join, token quản trị, security header và bộ test riêng.</li>
+      </ul>
+      <a class="more" href="https://github.com/ThaoNgan65/AI-Exam-Monitoring-System---Real-Time-Mobile-Phone-Detection" target="_blank" rel="noopener" data-en="Source code ↗">Mã nguồn ↗</a>
+    </div>
+  </article>
+</section>
+
+<section class="sec" id="ky-nang">
+  <h2 data-en="Tools I use every day">Công cụ mình dùng hằng ngày</h2>
+  <div class="skills">
+    <div><h3 data-en="Programming and data">Lập trình và dữ liệu</h3><ul><li>Python</li><li>SQL</li><li>NumPy</li><li>Pandas</li></ul></div>
+    <div><h3 data-en="AI and machine learning">AI và Machine Learning</h3><ul><li>PyTorch</li><li>OpenCV</li><li>Deep Learning</li><li>Computer Vision</li><li>Object Detection</li></ul></div>
+    <div><h3 data-en="Application development">Phát triển ứng dụng</h3><ul><li>Flask</li><li>Streamlit</li><li>REST API</li><li data-en="LLM integration">Tích hợp LLM</li></ul></div>
+    <div><h3 data-en="Tools">Công cụ</h3><ul><li>Git</li><li>GitHub</li><li>Google Colab</li><li>Jupyter</li><li>VS Code</li></ul></div>
+  </div>
+</section>
+
+<footer id="lien-he">
+  <h2 data-en="Let’s build something that runs.">Cùng làm một thứ gì đó chạy được nhé.</h2>
+  <div class="cta" style="margin:0">
+    <a class="btn fill" href="https://www.linkedin.com/in/ngan-nguyen-04bb3a410/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a class="btn" href="https://github.com/ThaoNgan65" target="_blank" rel="noopener">GitHub ↗</a>
+  </div>
+</footer>
+<p class="small" data-en="Thảo Ngân · FPT University, Can Tho · 2026">Thảo Ngân · Đại học FPT Cần Thơ · 2026</p>
+</div>
+<script>
+(function(){
+  var els=[].slice.call(document.querySelectorAll("[data-en]"));
+  els.forEach(function(e){e.setAttribute("data-vi",e.innerHTML);});
+  function set(l,save){
+    document.documentElement.lang=l;
+    els.forEach(function(e){e.innerHTML=e.getAttribute(l==="en"?"data-en":"data-vi");});
+    document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.l===l));});
+    if(save){try{localStorage.setItem("lang",l);}catch(x){}}
+  }
+  document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){set(b.dataset.l,true);});});
+  var s=null;try{s=localStorage.getItem("lang");}catch(x){}
+  if(s==="en")set("en",false);
+
+  /* lưới + điểm mốc khuôn mặt */
+  var N="http://www.w3.org/2000/svg",g=document.getElementById("grid"),d=document.getElementById("dots"),i,e,seed=7;
+  function r(){seed=(seed*16807)%2147483647;return seed/2147483647;}
+  function mk(p,t,a){e=document.createElementNS(N,t);for(var k in a)e.setAttribute(k,a[k]);p.appendChild(e);}
+  for(i=0;i<=400;i+=28){mk(g,"path",{d:"M"+i+" 0V460"});}
+  for(i=0;i<=460;i+=28){mk(g,"path",{d:"M0 "+i+"H400"});}
+  for(i=0;i<130;i++){var x=r()*2-1,y=r()*2-1;if(x*x+y*y<.92)mk(d,"circle",{cx:196+x*84,cy:206+y*126,r:1.5,opacity:.55});}
+  for(i=0;i<50;i++){var a=Math.PI*2*i/50;mk(d,"circle",{cx:196+Math.cos(a)*88,cy:206+Math.sin(a)*130,r:2.2});}
+
+  /* tương tác ô ngắm */
+  var vf=document.querySelector(".vf"),sv=document.getElementById("vf"),ey=[].slice.call(sv.querySelectorAll(".ey")),pu=[].slice.call(sv.querySelectorAll(".pu")),mo=document.getElementById("mo"),eb=document.getElementById("eb"),ec=document.getElementById("ec"),et=document.getElementById("et"),fl=document.getElementById("flash"),st=document.getElementById("st"),btns=[].slice.call(document.querySelectorAll(".ctl button")),dts=[].slice.call(sv.querySelectorAll(".dt")),still=matchMedia("(prefers-reduced-motion: reduce)").matches,focus=null,t0=0,holding=false,raf=0,px=0,py=0;
+  var T={vi:{def:"Chọn một tín hiệu bên trên, hoặc nhấn giữ vào khung hình để thử nhắm mắt.",face:"468 điểm mốc khuôn mặt được theo dõi realtime trong dự án phát hiện buồn ngủ.",eyes:"Mắt nhắm quá khoảng 1,8 giây thì hệ thống mới cảnh báo.",phone:"Phát hiện điện thoại trong phòng thi, lưu khung hình và gửi Telegram.",skin:"Xác suất melanoma từ 0,30 trở lên thì gán nhãn nguy cơ cao."},en:{def:"Pick a signal above, or press and hold the frame to try closing your eyes.",face:"468 face landmarks tracked in real time in the drowsiness project.",eyes:"An alert fires only after the eyes stay closed for about 1.8 seconds.",phone:"Detects phones during an exam, saves the frame and sends it to Telegram.",skin:"A melanoma probability of 0.30 or more assigns the high-risk label."}};
+  function say(){st.textContent=T[document.documentElement.lang==="en"?"en":"vi"][focus||"def"];}
+  function setFocus(k){focus=focus===k?null:k;vf.classList.toggle("f",!!focus);dts.forEach(function(x){x.classList.toggle("on",x.dataset.k===focus);});btns.forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.k===focus));});say();}
+  btns.forEach(function(b){b.addEventListener("click",function(){setFocus(b.dataset.k);});});
+  document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",say);});
+  function apply(){d.style.transform="translate("+px*9+"px,"+py*6+"px)";ey.forEach(function(e){e.style.transform="translate("+px*6+"px,"+py*4+"px)";});mo.style.transform="translate("+px*8+"px,"+py*5+"px)";pu.forEach(function(p){p.style.transform="translate("+px*10+"px,"+py*2+"px)";});}
+  function look(cx,cy){var r=sv.getBoundingClientRect();px=Math.max(-1,Math.min(1,((cx-r.left)/r.width-.5)*2));py=Math.max(-1,Math.min(1,((cy-r.top)/r.height-.5)*2));apply();}
+  function eyes(o){ey.forEach(function(e){e.setAttribute("ry",o?8:1);});pu.forEach(function(p){p.style.opacity=o?1:0;});}
+  function tick(){if(!holding)return;var s=(performance.now()-t0)/1000,al=s>=1.8;et.textContent=(al?"ALERT · ":"eyes · ")+s.toFixed(1)+" s";ec.setAttribute("width",al?104:86);eb.setAttribute("fill",al?"rgba(242,84,45,.28)":"none");eb.setAttribute("stroke-width",al?3:1.5);fl.setAttribute("stroke-width",al?6:0);raf=requestAnimationFrame(tick);}
+  function rel(){if(!holding)return;holding=false;cancelAnimationFrame(raf);eyes(true);et.textContent="eyes · 1.8 s";ec.setAttribute("width",86);eb.setAttribute("fill","none");eb.setAttribute("stroke-width",1.5);fl.setAttribute("stroke-width",0);}
+  sv.addEventListener("pointerdown",function(e){holding=true;t0=performance.now();eyes(false);look(e.clientX,e.clientY);tick();});
+  sv.addEventListener("contextmenu",function(e){e.preventDefault();});
+  addEventListener("pointerup",rel);addEventListener("pointercancel",rel);
+  if(!still){
+    addEventListener("pointermove",function(e){look(e.clientX,e.clientY);});
+    setInterval(function(){if(holding)return;eyes(false);setTimeout(function(){if(!holding)eyes(true);},140);},4200);
+  }
+  say();
+})();
+</script>
+</body>
+</html>
